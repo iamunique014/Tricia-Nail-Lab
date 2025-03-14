@@ -1,0 +1,405 @@
+:root {
+  --accent-color: #ff66b2;
+}
+
+
+body {
+  background-color: #ffe6f2;
+  color: #333;
+}
+
+
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.section-title {
+  text-align: center;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+}
+
+.section-title h2:before,
+.section-title h2:after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background: var(--accent-color);
+  display: inline-block;
+}
+
+.section-title h2:before {
+  margin: 0 15px 10px 0;
+}
+
+.section-title h2:after {
+  margin: 0 0 10px 15px;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+
+/*============= NAVBAR ===========*/
+
+.navbar {
+  background: #ff66b2;
+}
+
+.navbar a {
+  color: white;
+}
+
+/*============= HERO ===========*/
+
+.hero {
+  background: pink;
+  padding: 60px 0;
+  text-align: center;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero h1 {
+  /*font-size: 2.5rem; 
+    font-weight: bold; */
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 60px;
+  color: #ffffff;
+}
+
+.hero p {
+  color: color-mix(in srgb, #ffffff, transparent 30%);
+  margin: 5px 0 30px 0;
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.cta {
+  background: #ff66b2;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.hero-right img {
+  border-radius: 10px;
+  max-height: 450px;
+}
+
+/*Animation*/
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-left p,
+.hero-left .cta {
+  animation: fadeInUp 1s ease-out;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Add delay for a staggered effect */
+.hero-left p {
+  animation-delay: 0.3s;
+}
+
+.hero-left .cta {
+  animation-delay: 0.6s;
+}
+
+
+
+.hero-left h1 {
+  overflow: hidden;
+  display: inline-block;
+  border-right: 3px solid pink;
+  width: 0;
+  min-width: fit-content;
+  animation: typing 2s steps(20, end) forwards;
+}
+
+.hero .animated {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+}
+
+/*============= HERO-END ===========*/
+
+
+/*==============================*/
+/*        Swiper Service        */
+/*==============================*/
+
+.clients {
+  background-color: #c08888;
+}
+
+.swiper-slide {
+  padding-top: 14px;
+}
+
+.clients .swiper-wrapper {
+  height: auto;
+}
+
+.clients .swiper-slide p {
+  transition: 0.3s;
+}
+
+.clients .swiper-slide p:hover {
+  transform: scale(1.1);
+}
+
+.clients .swiper-slide p {
+  font-family: 'Great Vibes', cursive;
+  /* Try 'Pacifico' if you prefer */
+  font-size: 2.5rem;
+  /* Adjust for bigger size */
+  font-weight: bold;
+  text-align: center;
+  color: #181617;
+  /* Stylish pink, change as needed */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.services,
+.gallery,
+.contact {
+  padding: 50px 0;
+}
+
+/*--------------------------------------------------------------
+# Services Section
+--------------------------------------------------------------*/
+
+.services .service-item {
+  background-color: pink;
+  transition: 0.6s;
+}
+
+.services .service-item:hover {
+  background-color: var(--accent-color)
+}
+
+/*--------------------------------------------------------------
+# gallery Section
+--------------------------------------------------------------*/
+.gallery .gallery-filters {
+  padding: 0;
+  margin: 0 auto 20px auto;
+  list-style: none;
+  text-align: center;
+}
+
+.gallery .gallery-filters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 20px 10px 20px;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 5px;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  font-family: var(--heading-font);
+}
+
+.gallery .gallery-filters li:hover,
+.gallery .gallery-filters li.filter-active {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+}
+
+.gallery .gallery-filters li:first-child {
+  margin-left: 0;
+}
+
+.gallery .gallery-filters li:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 575px) {
+  .gallery .gallery-filters li {
+    font-size: 14px;
+    margin: 0 0 10px 0;
+  }
+}
+
+.gallery .gallery-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery .gallery-item .gallery-info {
+  opacity: 0;
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: -100%;
+  z-index: 3;
+  transition: all ease-in-out 0.5s;
+  background: color-mix(in srgb, var(--background-color), transparent 10%);
+  padding: 15px;
+}
+
+.gallery .gallery-item .gallery-info h4 {
+  font-size: 18px;
+  font-weight: 600;
+  padding-right: 50px;
+}
+
+.gallery .gallery-item .gallery-info p {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 14px;
+  margin-bottom: 0;
+  padding-right: 50px;
+}
+
+.gallery .gallery-item .gallery-info .preview-link,
+.gallery .gallery-item .gallery-info .details-link {
+  position: absolute;
+  right: 50px;
+  font-size: 24px;
+  top: calc(50% - 14px);
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  transition: 0.3s;
+  line-height: 0;
+}
+
+.gallery .gallery-item .gallery-info .preview-link:hover,
+.gallery .gallery-item .gallery-info .details-link:hover {
+  color: var(--accent-color);
+}
+
+.gallery .gallery-item .gallery-info .details-link {
+  right: 14px;
+  font-size: 28px;
+}
+
+.gallery .gallery-item:hover .gallery-info {
+  opacity: 1;
+  bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+.contact {
+  background: pink;
+}
+
+.contact-form, .socials,
+.map {
+  background-color: #ffe6f2;
+  padding: 30px;
+}
+
+.contact .socials i {
+  line-height: 0;
+  color: var(--accent-color);
+}
+
+.contact .socials h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10;
+}
+
+.contact .socials p {
+  padding: 0;
+  line-height: 24px;
+  font-size: 16px;
+  margin-top: 5;
+}
+
+.contact input[type=text],
+.contact input[type=email],
+.contact .contact-form textarea {
+  font-size: 14px;
+  padding: 10px 15px;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--default-color);
+  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.contact input[type=text]:focus,
+.contact input[type=email]:focus,
+.contact .contact-form textarea:focus {
+  border-color: var(--accent-color);
+}
+
+.contact input[type=text]::placeholder,
+.contact input[type=email]::placeholder,
+.contact textarea::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.contact button[type=submit] {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border: 0;
+  padding: 10px 30px;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.contact button[type=submit]:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
